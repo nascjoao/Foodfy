@@ -1,0 +1,26 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<section id="recipes" class="container">
+    <div class="recipes-grid" style="margin-top: 50px;">
+        {% for recipe in recipes %}
+        <div class="recipe">
+            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+            <div class="info">
+                <div class="title">{{recipe.title}}</div>
+                <div class="author">por {{recipe.author}}</div>
+            </div>
+        </div>
+        {% endfor %}
+        {% for recipe in recipes %}
+        <div class="recipe">
+            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+            <div class="info">
+                <div class="title">{{recipe.title}}</div>
+                <div class="author">por {{recipe.author}}</div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
