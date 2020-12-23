@@ -80,6 +80,7 @@ section > h2 {
 .recipes-grid .recipe .title {
     font-size: 18px;
     margin-bottom: 5px;
+    color: var(--main-text);
 }
 
 .recipes-grid .recipe .author {
