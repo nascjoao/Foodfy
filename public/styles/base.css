@@ -24,17 +24,59 @@ body {
     flex-direction: column;
 }
 
+main {
+    margin: 0 20px;
+}
+
 .container {
     max-width: 940px;
     margin: 0 auto;
+}
+
+section {
+    width: 100%;
+}
+
+section > h1 {
+    font-size: 24px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    color: var(--main-text);
+}
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px 20px;
+}
+
+.recipes-grid .recipe {
+    display: grid;
+    grid-template-rows: auto, 31px;
+    gap: 20px;
+}
+
+.recipes-grid .recipe img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.recipes-grid .recipe .title {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.recipes-grid .recipe .author {
+    font-size: 14px;
+    color: var(--secondary-text);
 }
 
 footer {
     background-color: var(--light-gray-background);
     color: var(--light-gray-text);
 
-    margin-top: auto;
-    height: 62px;
+    margin-top: 50px;
+    padding: 25px 20px;
 
     display: flex;
     align-items: center;
