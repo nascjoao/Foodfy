@@ -1,6 +1,5 @@
 section#welcome {
     background-color: #FBDFDB;
-    width: 100%;
     height: 366px;
     margin-top: 30px;
     border-radius: 30px;
@@ -16,6 +15,7 @@ section#welcome .text {
 
 section#welcome .text strong {
     font-size: 32px;
+    color: var(--main-text);
 }
 
 section#welcome .text p {
