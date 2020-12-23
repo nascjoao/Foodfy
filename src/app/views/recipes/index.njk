@@ -2,8 +2,9 @@
 
 {% block content %}
 <section id="recipes" class="container">
-    <div class="recipes-grid" style="margin-top: 50px;">
+    <div class="recipes-grid">
         {% for recipe in recipes %}
+        <a href="/receitas/{{loop.index0}}">
         <div class="recipe">
             <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
             <div class="info">
@@ -11,8 +12,10 @@
                 <div class="author">por {{recipe.author}}</div>
             </div>
         </div>
+        </a>
         {% endfor %}
         {% for recipe in recipes %}
+        <a href="/receitas/{{loop.index0}}">
         <div class="recipe">
             <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
             <div class="info">
@@ -20,6 +23,7 @@
                 <div class="author">por {{recipe.author}}</div>
             </div>
         </div>
+        </a>
         {% endfor %}
     </div>
 </section>
