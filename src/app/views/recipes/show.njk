@@ -8,8 +8,11 @@
         <div class="author">por Jorge Relato</div>
     </header>
 
-    <section id="ingredients">
+    <section class="ingredients">
+        <header>
         <h1>Ingredientes</h1>
+        </header>
+        <div class="content">
         <ul>
             {% for ingredient in recipe.ingredients %}
             <li class="ingredient">
@@ -21,10 +24,14 @@
             </li>
             {% endfor %}
         </ul>
+        </div>
     </section>
     
-    <section id="preparation">
+    <section class="preparation">
+        <header>
         <h1>Modo de preparo</h1>
+        </header>
+        <div class="content">
         <ul>
             {% for step in recipe.preparation %}
             <li class="step">
@@ -32,13 +39,20 @@
             </li>
             {% endfor %}
         </ul>
+        </div>
     </section>
     
-    <section id="plus-information">
+    {% if recipe.information %}
+    <section class="plus-information">
+        <header>
         <h1>Informações adicionais</h1>
+        </header>
+        <div class="content">
         <p>
             {{recipe.information}}
         </p>
+        </div>
     </section>
+    {% endif %}
 </section>
 {% endblock content %}
