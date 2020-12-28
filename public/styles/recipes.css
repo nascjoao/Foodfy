@@ -41,6 +41,10 @@ section#recipe-show .preparation .step::marker {
     font-weight: bold;
 }
 
+section#recipe-show p {
+    margin-top: 0;
+}
+
 section#recipe-show section header {
     position: relative;
     display: inline-flex;
