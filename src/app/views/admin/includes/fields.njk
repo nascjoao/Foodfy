@@ -1,27 +1,64 @@
 <div class="fields">
-<div class="field">
-<label for="photos">Imagens da receita</label>
-<input type="file" name="photos">
-</div>
+    <input type="hidden" name="id" value="{{recipe.id}}">
+    
+    <div class="field">
+    <label for="name">Nome</label>
+    <input type="text" name="name" value="{{recipe.title}}">
+    </div>
+    
+    <div class="field">
+    <label for="photos">Imagens da receita</label>
+    <input type="file" name="photos">
+    </div>
+    
+    <div class="field">
+    <label for="chef">Chef</label>
+    <select name="chef">
+        {% for chef in chefs %}
+        {% if recipe.chef_name %}
+            <option value="{{recipe.chef_id}}" selected>{{recipe.chef_name}}</option>
+        {% elif recipe.chef_id != chef.id %}
+            <option value="select" selected disabled>Selecione um chef</option>
+            <option value="{{chef.id}}">{{chef.name}}</option>
+        {% endif %}
+        {% endfor %}
+    </select>
+    </div>
 
-<div class="field" id="ingredients">
-<label for="ingredients">Ingredientes</label>
-<div class="item">
-    <input type="text" name="ingredients[]">
-</div>
-<span class="add-input">Adicionar novo ingrediente</span>
-</div>
+    <div class="field" id="ingredients">
+    <label for="ingredients">Ingredientes</label>
+    {% if recipe.ingredients %}
+    {% for ingredient in recipe.ingredients %}
+    <div class="item">
+        <input type="text" name="ingredients[]" value="{{ingredient}}">
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="item">
+        <input type="text" name="ingredients[]">
+    </div>
+    {% endif %}
+    <span class="add-input">Adicionar novo ingrediente</span>
+    </div>
 
-<div class="field" id="preparation">
-<label for="preparation">Modo de preparo</label>
-<div class="item">
-    <input type="text" name="preparation[]">
-</div>
-<span class="add-input">Adicionar novo passo</span>
-</div>
+    <div class="field" id="preparation">
+    <label for="preparation">Modo de preparo</label>
+    {% if recipe.preparation %}
+    {% for step in recipe.preparation %}
+    <div class="item">
+        <input type="text" name="preparation[]" value="{{step}}">
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="item">
+        <input type="text" name="preparation[]">
+    </div>
+    {% endif %}
+    <span class="add-input">Adicionar novo passo</span>
+    </div>
 
-<div class="field">
-<label for="plus-information">Informações adicionais</label>
-<textarea name="plus-information"></textarea>
-</div>
+    <div class="field">
+    <label for="plus_information">Informações adicionais</label>
+    <textarea name="plus_information">{{recipe.information}}</textarea>
+    </div>
 </div>
