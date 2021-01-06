@@ -1,0 +1,29 @@
+{% extends 'admin/layout.njk' %}
+
+{% block content %}
+<section id="admin-chef-edit" class="container">
+    <form action="/admin/chefs?_method=PUT" method="post" id="edit-chef" enctype="multipart/form-data">
+    <header>
+        <h1>Editando chef</h1>
+        <button type="submit" class="primary">Salvar chef</button>
+    </header>
+        <div class="fields">
+            <input type="hidden" name="id" value="{{chef.id}}">
+            <div class="field">
+                <label for="name">Nome</label>
+                <input type="text" name="name" value="{{chef.name}}">
+            </div>
+
+            <div class="field">
+                <label for="photos">Imagem do Chef</label>
+                <input type="file" name="photos">
+            </div>
+        </div>
+    </form>
+
+    <form action="/admin/chefs?_method=DELETE" method="post" class="delete">
+        <button type="submit">Deletar</button>
+        <input type="hidden" name="id" value="{{chef.id}}">
+    </form>
+</section>
+{% endblock content %}
