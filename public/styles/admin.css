@@ -12,27 +12,39 @@ header#main.about .menu {
 }
 
 header#main.about .menu ul a {
+    color: var(--light-gray-text);
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 200ms;
+}
+
+header#main.about .menu ul a:hover {
     color: white;
 }
 
-#admin #recipes .recipes-grid {
+header#main.about .menu ul a.active {
+    color: white;
+}
+
+#admin section#recipes .recipes-grid {
     grid-template-columns: repeat(auto-fit, minmax(445px, 1fr));
     margin-top: 30px;
     gap: 20px;
 }
 
-#admin #recipes .recipes-grid .recipe {
+#admin .recipes-grid .recipe {
     display: grid;
     grid-template-columns: 172px auto;
 }
 
-#admin #recipes .recipes-grid .recipe img {
+#admin .recipes-grid .recipe img {
     object-fit: cover;
     width: 100%;
     height: 80px;
 }
 
-#admin #recipes .recipes-grid .recipe button {
+#admin .grid button {
     background: none;
     color: #6558C3;
     border: none;
@@ -45,25 +57,42 @@ header#main.about .menu ul a {
     margin-bottom: 51px;
 }
 
-section#admin-recipe-show > header {
+#admin > section > header {
+    display: flex;
+    flex-direction: column;
     text-align: center;
     margin-top: 50px;
 }
 
-section#admin-recipe-show > header img {
+#admin > section > header img {
     border-radius: 15px;
     margin-bottom: 50px;
+    width: 940px;
+    height: 280px;
+    object-fit: cover;
 }
 
-section#admin-recipe-show > header .title {
+#admin > section > header img.chef {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto 30px auto;
+}
+
+#admin > section > header .name {
     font-size: 36px;
     color: var(--main-text);
+    margin-bottom: 4px;
 }
 
-section#admin-recipe-show > header .author {
+#admin > section > header:nth-child(2), #admin > section > header:nth-child(2) a {
     font-size: 20px;
-    margin-top: 4px;
     color: var(--secondary-text);
+}
+
+#admin > section > header:nth-child(2) a:hover {
+    text-decoration: underline;
 }
 
 section#admin-recipe-show .ingredients .ingredient {
@@ -93,18 +122,18 @@ section#admin-recipe-show section header {
     display: inline-flex;
 }
 
-#admin #admin-recipe-show .edit {
+#admin > section .edit {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 50px;
 }
 
-#admin #admin-recipe-show .edit h1 {
+#admin > section .edit h1 {
     margin: 0;
 }
 
-#admin #admin-recipe-show .edit button {
+#admin > section .edit button {
     background: #6558C3;
     font-weight: bold;
     font-size: 16px;
@@ -114,12 +143,12 @@ section#admin-recipe-show section header {
     border-radius: 4px;
 }
 
-#admin #admin-recipe-edit, #admin #admin-recipe-create {
+#admin > section {
     margin-bottom: 51px;
     position: relative;
 }
 
-#admin #admin-recipe-edit form header, #admin #admin-recipe-create form header {
+#admin > section form header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -127,11 +156,15 @@ section#admin-recipe-show section header {
     margin-top: 50px;
 }
 
-#admin #admin-recipe-edit form header h1, #admin #admin-recipe-create form header h1 {
+#admin > section form header h1 {
     margin: 0;
 }
 
-#admin #admin-recipe-edit form .add-input, #admin #admin-recipe-create form .add-input {
+#admin > section form header button {
+    width: 139px;
+}
+
+#admin > section form .add-input {
     font-weight: bold;
     font-size: 16px;
     color: #6558C3;
@@ -142,39 +175,19 @@ section#admin-recipe-show section header {
     cursor: pointer;
 }
 
-.fields .field {
-    margin-top: 30px;
-}
-
-.fields .field label {
-    font-weight: bold;
-    color: var(--main-text);
-    font-size: 16px;
-}
-
-.fields .field input, .fields .field textarea {
-    width: 100%;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-top: 10px;
-    padding: 15px 20px;
-    font-size: 16px;
-    color: var(--main-text);
-}
-
 .fields .field textarea {
     min-height: 257px;
     resize: vertical;
 }
 
-form#delete-recipe {
+#admin form.delete {
     position: absolute;
     top: 0;
     right: 139px;
     margin-right: 10px;
 }
 
-form#delete-recipe button {
+#admin form.delete button {
     background: #DC4747;
     padding: 9px 20px;
     font-weight: bold;
@@ -187,7 +200,6 @@ form#delete-recipe button {
 .fields .field .item {
     position: relative;
     transition: 400ms;
-    height: 61px;
 }
 
 .fields .field .remove-input {
@@ -199,6 +211,7 @@ form#delete-recipe button {
     cursor: pointer;
     background: white;
     box-shadow: 0 0 7px 8px white;
+    border-radius: 50%;
 
     transition: 400ms;
 }
@@ -206,4 +219,30 @@ form#delete-recipe button {
 .fields .field .remove-input:hover {
     color: #DC4747;
     transform: translateY(-50%) rotateZ(180deg);
+}
+
+
+#admin .chefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(179px, 1fr));
+    margin-top: 30px;
+    gap: 20px;
+}
+
+#admin .chefs-grid .chef img {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
+}
+
+#admin .chefs-grid .chef {
+    display: grid;
+    grid-template-columns: 64px auto;
+    gap: 20px;
+    align-items: center;
+}
+
+#admin .chefs-grid .chef .name {
+    margin-bottom: 0;
 }
