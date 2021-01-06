@@ -15,13 +15,13 @@
 
 <section id="featured-recipes" class="container">
     <h1>Mais acessadas</h1>
-    <div class="recipes-grid">
+    <div class="recipes-grid grid">
         {% for recipe in recipes %}
         <a href="/receitas/{{loop.index0}}">
         <div class="recipe">
             <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
             <div class="info">
-                <div class="title">{{recipe.title}}</div>
+                <div class="name">{{recipe.title}}</div>
                 <div class="author">por {{recipe.author}}</div>
             </div>
         </div>
