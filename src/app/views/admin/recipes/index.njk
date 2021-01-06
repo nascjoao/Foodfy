@@ -1,0 +1,26 @@
+{% extends 'admin/layout.njk' %}
+
+{% block content %}
+<section id="recipes" class="container">
+    <div class="edit">
+        <h1>{% if recipes.length == 0 %}Nenhuma receita foi cadastrada ainda{% else %}Gerenciar receitas{% endif %}</h1>
+        <a href="/admin/receitas/criar"><button class="primary">Criar receita</button></a>
+    </div>
+    {% if recipes.length == 0 %}
+    <p>Crie novas receitas para que elas sejam listadas nessa página.</p>
+    {% else %}
+    <div class="recipes-grid grid">
+        {% for recipe in recipes %}
+        <div class="recipe">
+            <img src="{{recipe.imageSrc}}" alt="Imagem de {{recipe.title}}">
+            <div class="info">
+                <div class="name">{{recipe.title}}</div>
+                <div class="author">por {{ recipe.chef_name }}</div>
+                <a href="/admin/receitas/{{recipe.id}}"><button>Visualizar</button></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endblock content %}

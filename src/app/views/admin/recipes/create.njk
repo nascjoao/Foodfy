@@ -1,0 +1,21 @@
+{% extends 'admin/layout.njk' %}
+
+{% block content %}
+<section id="admin-recipe-create" class="container">
+    {% if chefs.length == 0 %}
+    <header>
+    <h1>Nenhum chef cadastrado</h1>
+    <p>Para cadastrar uma nova receita, é preciso ter ao menos um(a) chef cadastrado(a) no Foodfy.</p>
+    <a href="/admin/chefs/criar"><button class="primary" style="margin-top: 40px;">Cadastrar Chef</button></a>
+    </header>
+    {% else %}
+    <form action="/admin/receitas" method="post" enctype="multipart/form-data">
+    <header>
+        <h1>Criando receita</h1>
+        <button type="submit" class="primary">Salvar receita</button>
+    </header>
+        {% include 'admin/includes/fields.njk' %}
+    </form>
+    {% endif %}
+</section>
+{% endblock content %}
