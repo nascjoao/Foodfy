@@ -1,0 +1,23 @@
+{% extends 'admin/layout.njk' %}
+
+{% block content %}
+<section id="admin-chef-create" class="container">
+    <form action="/admin/chefs" method="post" id="create-chef" enctype="multipart/form-data">
+    <header>
+        <h1>Criando chef</h1>
+        <button type="submit" class="primary">Salvar chef</button>
+    </header>
+        <div class="fields">
+            <div class="field">
+                <label for="name">Nome</label>
+                <input type="text" name="name">
+            </div>
+
+            <div class="field">
+                <label for="photos">Imagem do Chef</label>
+                <input type="file" name="photos">
+            </div>
+        </div>
+    </form>
+</section>
+{% endblock content %}
