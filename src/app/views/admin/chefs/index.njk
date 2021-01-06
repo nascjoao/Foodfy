@@ -1,0 +1,25 @@
+{% extends 'admin/layout.njk' %}
+
+{% block content %}
+<section id="chefs" class="container">
+    <div class="edit">
+        <h1>{% if chefs.length == 0 %}Nenhum(a) chef foi cadastrado(a) ainda{% else %}Gerenciar chefs{% endif %}</h1>
+        <a href="/admin/chefs/criar"><button class="primary">Cadastrar chef</button></a>
+    </div>
+    {% if chefs.length == 0 %}
+    <p>Faça o cadastro de chefs para começar a cadastrar receitas.</p>
+    {% else %}
+    <div class="chefs-grid grid">
+        {% for chef in chefs %}
+        <div class="chef">
+            <img src="{{chef.imageSrc}}" alt="Imagem de {{chef.name}}">
+            <div class="info">
+                <div class="name">{{chef.name}}</div>
+                <a href="/admin/chefs/{{chef.id}}"><button>Visualizar</button></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+</section>
+{% endblock content %}
