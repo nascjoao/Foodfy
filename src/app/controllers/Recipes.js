@@ -1,8 +1,14 @@
-const recipes = require('../data')
+const Recipes = require('../models/Recipes')
 
 module.exports = {
-    index(req, res) {
-        return res.render('recipes/index', { recipes })
+    async index(req, res) {
+        try {
+            const results = await Recipes.listRecipes()
+            const recipes = results.rows
+            return res.render('recipes/index', { recipes })
+        } catch (err) {
+            console.error(err)
+        }
     },
 
     show(req, res) {
