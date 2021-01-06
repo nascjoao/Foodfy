@@ -21,6 +21,10 @@ header#main .menu ul .item a {
     font-size: 16px;
 }
 
+header#main .menu ul .item a.active {
+    font-weight: bold;
+}
+
 header#main .menu ul .item:last-child a {
     margin-right: 0;
 }
