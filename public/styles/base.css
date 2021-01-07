@@ -131,7 +131,7 @@ section h2 {
 }
 
 .recipes-grid .recipe img {
-    width: 100%;
+    width: 300px;
     height: 140px;
     object-fit: cover;
     border-radius: 15px;
@@ -149,9 +149,13 @@ section h2 {
 }
 
 footer {
+    margin-top: auto;
+}
+
+footer .content {
     background-color: var(--light-gray-background);
     color: var(--light-gray-text);
-
+    
     margin-top: 50px;
     padding: 25px 20px;
 
