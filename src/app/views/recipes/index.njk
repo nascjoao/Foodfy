@@ -4,23 +4,12 @@
 <section id="recipes" class="container">
     <div class="recipes-grid grid">
         {% for recipe in recipes %}
-        <a href="/receitas/{{loop.index0}}">
+        <a href="/receitas/{{recipe.id}}">
         <div class="recipe">
-            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+            <img src="{{recipe.imageSrc}}" alt="Imagem de {{recipe.title}}">
             <div class="info">
                 <div class="name">{{recipe.title}}</div>
-                <div class="author">por {{recipe.author}}</div>
-            </div>
-        </div>
-        </a>
-        {% endfor %}
-        {% for recipe in recipes %}
-        <a href="/receitas/{{loop.index0}}">
-        <div class="recipe">
-            <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
-            <div class="info">
-                <div class="name">{{recipe.title}}</div>
-                <div class="author">por {{recipe.author}}</div>
+                <div class="author">por {{recipe.chef_name}}</div>
             </div>
         </div>
         </a>
