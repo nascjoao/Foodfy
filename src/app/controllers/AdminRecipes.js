@@ -28,11 +28,13 @@ module.exports = {
 
         if (req.files.length == 0) return res.send('Please send at least one image')
 
-        req.files.map(async file => { 
+        const filesPromise = req.files.map(async file => { 
             const files = await Files.create({ ...file })
             const fileId = files.rows[0].id
             await RecipesFiles.create(recipeId, fileId)
         })
+
+        await Promise.all(filesPromise)
 
         return res.redirect(`/admin/receitas/${recipeId}`)
     },
