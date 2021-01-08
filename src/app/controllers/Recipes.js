@@ -1,4 +1,5 @@
 const Recipes = require('../models/Recipes')
+const RecipesFiles = require('../models/RecipesFiles')
 
 module.exports = {
     async index(req, res) {
@@ -16,11 +17,24 @@ module.exports = {
         }
     },
 
-    show(req, res) {
-        const recipeIndex = req.params.index;
+    async show(req, res) {
+        try {
+            const recipeId = req.params.id;
+    
+            let results = await Recipes.find(recipeId)
+            let recipe = results.rows[0]
+            results = await RecipesFiles.find(recipe.file_id)
+            const image = results.rows[0]
 
-        const recipe = recipes[recipeIndex]
+            recipe = {
+                ...recipe,
+                imageSrc: `${req.protocol}://${req.headers.host}${image.path.replace('public', '')}`
+            }
+    
+            return res.render('recipes/show', { recipe })
 
-        return res.render('recipes/show', { recipe })
+        } catch(err) {
+            console.error(err)
+        }
     }
 }
