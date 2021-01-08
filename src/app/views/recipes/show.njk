@@ -1,11 +1,11 @@
 {% extends 'layout.njk' %}
 
 {% block content %}
-<section id="recipe-show" class="container">
+<section class="container recipe-show">
     <header>
-        <img src="{{recipe.image}}" alt="Imagem de {{recipe.title}}">
+        <img src="{{recipe.imageSrc}}" alt="Imagem de {{recipe.title}}">
         <strong class="title">{{recipe.title}}</strong>
-        <div class="author">por Jorge Relato</div>
+        <div class="author">por {{recipe.chef_name}}</div>
     </header>
 
     <section class="ingredients">
