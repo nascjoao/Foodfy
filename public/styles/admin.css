@@ -50,26 +50,7 @@ header#main.about .menu ul a.active {
     border: none;
     font-weight: bold;
     font-size: 14px;
-    margin-top: 10px;
-}
-
-#admin #admin-recipe-show {
-    margin-bottom: 51px;
-}
-
-#admin > section > header {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin-top: 50px;
-}
-
-#admin > section > header img {
-    border-radius: 15px;
-    margin-bottom: 50px;
-    width: 940px;
-    height: 280px;
-    object-fit: cover;
+    margin-top: 5px;
 }
 
 #admin > section > header img.chef {
@@ -93,28 +74,6 @@ header#main.about .menu ul a.active {
 
 #admin > section > header:nth-child(2) a:hover {
     text-decoration: underline;
-}
-
-section#admin-recipe-show .ingredients .ingredient {
-    list-style: disc inside;
-    color: var(--text-paragraph);
-    font-size: 18px;
-    line-height: 28px;
-}
-
-section#admin-recipe-show .preparation .step {
-    list-style: decimal inside;
-    color: var(--text-paragraph);
-    font-size: 18px;
-    line-height: 28px;
-}
-
-section#admin-recipe-show .preparation .step::marker {
-    font-weight: bold;
-}
-
-section#admin-recipe-show p {
-    margin-top: 0;
 }
 
 section#admin-recipe-show section header {
@@ -219,30 +178,4 @@ section#admin-recipe-show section header {
 .fields .field .remove-input:hover {
     color: #DC4747;
     transform: translateY(-50%) rotateZ(180deg);
-}
-
-
-#admin .chefs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(179px, 1fr));
-    margin-top: 30px;
-    gap: 20px;
-}
-
-#admin .chefs-grid .chef img {
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-}
-
-#admin .chefs-grid .chef {
-    display: grid;
-    grid-template-columns: 64px auto;
-    gap: 20px;
-    align-items: center;
-}
-
-#admin .chefs-grid .chef .name {
-    margin-bottom: 0;
 }

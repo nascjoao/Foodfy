@@ -6,7 +6,7 @@ header#main {
 
 header#main .menu {
     display: grid;
-    grid-template-columns: 94px auto;
+    grid-template-columns: 94px auto auto;
     align-items: center;
     gap: 120px;
 }
@@ -27,4 +27,25 @@ header#main .menu ul .item a.active {
 
 header#main .menu ul .item:last-child a {
     margin-right: 0;
+}
+
+header#main .menu form {
+    display: flex;
+    align-items: center;
+}
+
+header#main .menu form input {
+    height: 37px;
+    font-size: 14px;
+    padding: 11px 15px;
+    margin-top: 0;
+    margin-right: 8px;
+}
+
+header#main .menu form input::placeholder {
+    color: var(--light-gray-text);
+}
+
+header#main .menu form button {
+    height: 37px;
 }

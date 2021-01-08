@@ -2,55 +2,55 @@ section#recipes .recipes-grid {
     margin-top: 50px;
 }
 
-section#recipe-show > header {
+section.recipe-show > header {
     text-align: center;
     margin-top: 50px;
 }
 
-section#recipe-show > header img {
+section.recipe-show > header img {
     border-radius: 15px;
     margin-bottom: 50px;
 }
 
-section#recipe-show > header .title {
+section.recipe-show > header .title {
     font-size: 36px;
     color: var(--main-text);
 }
 
-section#recipe-show > header .author {
+section.recipe-show > header .author {
     font-size: 20px;
     margin-top: 4px;
     color: var(--secondary-text);
 }
 
-section#recipe-show .ingredients .ingredient {
+section.recipe-show .ingredients .ingredient {
     list-style: disc inside;
     color: var(--text-paragraph);
     font-size: 18px;
     line-height: 28px;
 }
 
-section#recipe-show .preparation .step {
+section.recipe-show .preparation .step {
     list-style: decimal inside;
     color: var(--text-paragraph);
     font-size: 18px;
     line-height: 28px;
 }
 
-section#recipe-show .preparation .step::marker {
+section.recipe-show .preparation .step::marker {
     font-weight: bold;
 }
 
-section#recipe-show p {
+section.recipe-show p {
     margin-top: 0;
 }
 
-section#recipe-show section header {
+section.recipe-show section header {
     position: relative;
     display: inline-flex;
 }
 
-section#recipe-show section header > .toggle {
+section.recipe-show section header > .toggle {
     text-transform: uppercase;
     font-size: 12px;
     font-weight: bold;
