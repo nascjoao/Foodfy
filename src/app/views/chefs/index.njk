@@ -1,0 +1,25 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+<section id="chefs" class="container">
+    <div class="chefs-grid grid">
+        {% for chef in chefs %}
+        <div class="chef">
+            <img src="{{chef.imageSrc}}" alt="Imagem de {{chef.name}}">
+            <div class="info">
+                <div class="name">{{chef.name}}</div>
+                <div class="recipes-count">
+                    {% if chef.recipes_count.length == 0 %}
+                    Nenhuma receita
+                    {% elif chef.recipes_count.length == 1 %}
+                    1 receita
+                    {% else %}
+                    {{chef.recipes_count}} receitas
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}
