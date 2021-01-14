@@ -4,14 +4,16 @@ const RecipesFiles = require('../models/RecipesFiles')
 module.exports = {
     async index(req, res) {
         try {
-            const results = await Recipes.listRecipes()
+            let { search } = req.query
+            const results = await Recipes.listRecipes(search)
             let recipes = results.rows
             recipes = recipes.map(recipe => ({
                 ...recipe,
                 imageSrc: `${req.protocol}://${req.headers.host}${recipe.image_path.replace('public', '')}`
             }))
 
-            return res.render('recipes/index', { recipes })
+
+            return res.render('recipes/index', { recipes, search })
         } catch (err) {
             console.error(err)
         }
