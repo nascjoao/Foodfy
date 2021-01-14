@@ -1,7 +1,7 @@
 {% extends 'admin/layout.njk' %}
 
 {% block content %}
-<section id="admin-chef-edit" class="container">
+<section class="container admin-chef">
     <form action="/admin/chefs?_method=PUT" method="post" id="edit-chef" enctype="multipart/form-data">
     <header>
         <h1>Editando chef</h1>
@@ -15,8 +15,12 @@
             </div>
 
             <div class="field">
-                <label for="photos">Imagem do Chef</label>
-                <input type="file" name="photos">
+                <label for="photos">Avatar</label>
+                <input type="text" class="chef-imgsrc" value="{{chef.imageSrc}}" disabled>
+                <div class="photos-upload">
+                    <input type="file" name="photos">
+                    <button class="primary">Enviar Avatar</button>
+                </div>
             </div>
         </div>
     </form>
