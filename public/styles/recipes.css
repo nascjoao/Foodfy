@@ -64,3 +64,22 @@ section.recipe-show section header > .toggle {
     right: 0;
     transform: translateX(calc(100% + 8px));
 }
+
+.recipes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+    gap: 30px 20px;
+}
+
+.recipes-grid .recipe {
+    display: grid;
+    grid-template-rows: auto, 31px;
+    gap: 20px;
+}
+
+.recipes-grid .recipe img {
+    width: 300px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 15px;
+}
