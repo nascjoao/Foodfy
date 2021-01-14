@@ -50,6 +50,10 @@ header#main.about .menu ul a.active {
     border: none;
     font-weight: bold;
     font-size: 14px;
+    margin-top: 10px;
+}
+
+#admin .chef button {
     margin-top: 5px;
 }
 
