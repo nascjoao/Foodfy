@@ -12,9 +12,12 @@
                 <a href="/chefs">Chefs</a>
             </li>
         </ul>
+        {% if not chefs %}
         <form action="/receitas" method="get">
-            <input type="text" name="search" placeholder="Buscar uma receita">
+            <input type="text" name="search" placeholder="Buscar uma receita" {% if search %} value="{{search}}"
+            {% endif %}>
             <button type="submit" class="primary">Buscar</button>
         </form>
+        {% endif %}
     </nav>
 </header>
