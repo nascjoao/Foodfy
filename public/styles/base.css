@@ -70,7 +70,7 @@ label {
     font-size: 16px;
 }
 
-input, textarea, select {
+input:not([type=file]), textarea, select {
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 4px;
@@ -78,6 +78,24 @@ input, textarea, select {
     padding: 15px 20px;
     font-size: 16px;
     color: var(--main-text);
+}
+
+.photos-upload {
+    position: relative;
+    margin-top: 10px;
+}
+
+input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 11px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+input[type=file]::-webkit-file-upload-button {
+    display: none;
 }
 
 select {
