@@ -54,15 +54,28 @@ module.exports = {
         const id = req.params.id
 
         let results = await Chefs.find(id)
-        const chef = results.rows[0]
+        let chef = results.rows[0]
+        chef = {
+            ...chef,
+            imageSrc: `${req.protocol}://${req.headers.host}${chef.image_path.replace('public', '')}`
+        }
         
         return res.render('admin/chefs/edit', { chef })
     },
 
     async put(req, res) {
         const id = req.body.id
-        await Chefs.update(req.body)
-        return res.redirect(`/admin/chefs/${id}`)
+
+        let results = await Chefs.find(id)
+        const fileId = results.rows[0].file_id
+
+        req.files.map(async file => {
+            await Files.update({...file}, fileId)
+            results = await Chefs.update(req.body)
+    
+            return res.redirect(`/admin/chefs/${id}`)
+        })
+
     },
 
     async delete(req, res) {
