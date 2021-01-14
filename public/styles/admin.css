@@ -44,6 +44,27 @@ header#main.about .menu ul a.active {
     height: 80px;
 }
 
+#admin .admin-recipe .photos-upload input {
+    width: 149px;
+    height: 149px;
+}
+
+#admin .admin-recipe .photos-upload .add-photo {
+    width: 149px;
+    height: 149px;
+    border: 1px solid #ddd;
+    border-radius: 3.5px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#admin .admin-recipe .photos-upload .add-photo i {
+    font-size: 48px;
+    color: var(--secondary-text);
+}
+
 #admin .grid button {
     background: none;
     color: #6558C3;
@@ -51,18 +72,6 @@ header#main.about .menu ul a.active {
     font-weight: bold;
     font-size: 14px;
     margin-top: 10px;
-}
-
-#admin .chef button {
-    margin-top: 5px;
-}
-
-#admin > section > header img.chef {
-    border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    margin: 0 auto 30px auto;
 }
 
 #admin > section > header .name {
