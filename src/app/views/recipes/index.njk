@@ -2,7 +2,13 @@
 
 {% block content %}
 <section id="recipes" class="container">
-    <div class="recipes-grid grid">
+    {% if search %}
+    <h1>Buscando por "{{search}}"</h1>
+    {% if recipes.length == 0 %}
+    <p>Desculpe, não foi possível encontrar nenhuma receita.</p>
+    {% endif %}
+    {% endif %}
+    <div class="recipes-grid grid" {% if search %} style="margin-top: 20px" {% endif %}>
         {% for recipe in recipes %}
         <a href="/receitas/{{recipe.id}}">
         <div class="recipe">
