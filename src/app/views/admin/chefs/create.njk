@@ -1,7 +1,7 @@
 {% extends 'admin/layout.njk' %}
 
 {% block content %}
-<section id="admin-chef-create" class="container">
+<section class="container admin-chef">
     <form action="/admin/chefs" method="post" id="create-chef" enctype="multipart/form-data">
     <header>
         <h1>Criando chef</h1>
@@ -14,8 +14,11 @@
             </div>
 
             <div class="field">
-                <label for="photos">Imagem do Chef</label>
-                <input type="file" name="photos">
+                <label for="photos">Avatar</label>
+                <div class="photos-upload">
+                    <input type="file" name="photos">
+                    <button class="primary">Enviar Avatar</button>
+                </div>
             </div>
         </div>
     </form>
