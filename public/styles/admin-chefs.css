@@ -1,0 +1,20 @@
+#admin .chef button {
+    margin-top: 5px;
+}
+
+#admin > section > header img.chef {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 0 auto 30px auto;
+}
+
+.admin-chef .photos-upload input {
+    width: 136px;
+}
+
+.admin-chef .chef-imgsrc {
+    color: rgba(0, 0, 0, 0.36);
+    cursor: not-allowed;
+}
